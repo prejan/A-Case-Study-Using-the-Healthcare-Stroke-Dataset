@@ -1,0 +1,23 @@
+=== Inferential Statistics Results ===
+
+One-Sample t-Test (Glucose vs 100 mg/dL):
+Mean: 106.14, t=9.6919, p=0.0000
+95% CI: [104.90, 107.38]
+
+Two-Sample t-Test (BMI: Stroke vs Non-Stroke):
+t=3.3257, p=0.0010
+95% CI Diff: [0.53, 2.05]
+
+One-Way ANOVA (Age by Smoking):
+F=63.71, p=0.0000
+Group Means: {'never smoked': np.float64(46.744714587737846), 'formerly smoked': np.float64(54.96266968325792), 'smokes': np.float64(47.09632446134347)}
+
+Tukey HSD:
+        Multiple Comparison of Means - Tukey HSD, FWER=0.05        
+===================================================================
+     group1        group2    meandiff p-adj   lower   upper  reject
+-------------------------------------------------------------------
+formerly smoked never smoked   -8.218    0.0 -9.9899  -6.446   True
+formerly smoked       smokes  -7.8663    0.0 -9.9965 -5.7362   True
+   never smoked       smokes   0.3516 0.8956 -1.4916  2.1948  False
+-------------------------------------------------------------------
