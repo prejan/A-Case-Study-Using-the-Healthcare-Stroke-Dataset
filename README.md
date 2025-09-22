@@ -1,6 +1,3 @@
-Here’s a polished version of your **README.md** file that you can directly use for your GitHub repository:
-
-```markdown
 # Inferential Statistical Analysis of Stroke Risk Factors
 
 ## Overview
@@ -13,7 +10,7 @@ The analysis includes three statistical tests:
 
 The project is implemented in **Python (Google Colab)**, with outputs compatible for Excel and SPSS, meeting the requirements for the **September 23, 2025 viva**.
 
-**Author:** [Your Name]  
+**Author:** Prejan Raja S  
 **Course:** 21AIC401T Inferential Statistics and Predictive Analytics  
 **Date:** September 22, 2025  
 
@@ -26,36 +23,29 @@ The project is implemented in **Python (Google Colab)**, with outputs compatible
   - Missing BMI imputed with **median = 28.7**  
   - Excluded `'Unknown'` smoking status for ANOVA  
 - **Access:** Loaded directly via GitHub raw URL:  
-```
-
 [https://raw.githubusercontent.com/rupakroy/healthcare-dataset-stroke-data/master/healthcare-dataset-stroke-data.csv](https://raw.githubusercontent.com/rupakroy/healthcare-dataset-stroke-data/master/healthcare-dataset-stroke-data.csv)
-
-```
 
 ---
 
 ## Repository Structure
-```
+PrejanRajaS_stroke_analysis/
+├── PrejanRajaS_analysis.ipynb # Google Colab notebook with full implementation
+├── PrejanRajaS_CaseStudy.xlsx # Cleaned dataset + README sheet
+├── PrejanRajaS_results.txt # Statistical results for report/SPSS
+├── stroke_analysis_plots.png # Visualizations (BMI and age boxplots)
+└── README.md # Project documentation
 
-\[YourName]\_stroke\_analysis/
-├── \[YourName]\_analysis.ipynb   # Google Colab notebook with full implementation
-├── \[YourName]\_CaseStudy.xlsx   # Cleaned dataset + README sheet
-├── \[YourName]\_results.txt      # Statistical results for report/SPSS
-├── stroke\_analysis\_plots.png   # Visualizations (BMI and age boxplots)
-└── README.md                   # Project documentation
-
-````
 
 ---
 
 ## Setup Instructions
-1. Open [Google Colab](https://colab.research.google.com) and create a new notebook named **[YourName]_analysis.ipynb**.  
+1. Open [Google Colab](https://colab.research.google.com) and create a new notebook named **PrejanRajaS_analysis.ipynb**.  
 2. Copy the Python code from this repo into the notebook.  
 3. Run the cells in sequence — no manual dataset upload needed (auto-loads via GitHub URL).  
 4. Dependencies (`pandas`, `numpy`, `scipy`, `statsmodels`, `matplotlib`, `seaborn`) are pre-installed in Colab.  
 5. The notebook auto-generates:  
-   - **[YourName]_CaseStudy.xlsx** → cleaned data + variable descriptions  
-   - **[YourName]_results.txt** → test results (t-stats, p-values, CI)  
+   - **PrejanRajaS_CaseStudy.xlsx** → cleaned data + variable descriptions  
+   - **PrejanRajaS_results.txt** → test results (t-stats, p-values, CI)  
    - **stroke_analysis_plots.png** → boxplots for BMI and age  
 
 ---
@@ -80,7 +70,7 @@ The project is implemented in **Python (Google Colab)**, with outputs compatible
 
 ## Usage
 ### Running the Notebook
-1. Open **[YourName]_analysis.ipynb** in Colab.  
+1. Open **PrejanRajaS_analysis.ipynb** in Colab.  
 2. Execute cells in order.  
 3. No dataset upload needed — loads directly from GitHub.  
 
@@ -93,59 +83,26 @@ The project is implemented in **Python (Google Colab)**, with outputs compatible
 ---
 
 ## SPSS Validation
-Use **[YourName]_results.txt** to cross-check results in SPSS. Example syntax:  
+Use **PrejanRajaS_results.txt** to cross-check results in SPSS. Example syntax:  
 ```spss
-GET FILE='[YourName]_CaseStudy.xlsx'.
+GET FILE='PrejanRajaS_CaseStudy.xlsx'.
 
 T-TEST /TESTVAL=100 /VARIABLES=avg_glucose_level /CRITERIA=CI(.95).
 T-TEST GROUPS=stroke(0 1) /VARIABLES=bmi /CRITERIA=CI(.95).
 ONEWAY age BY smoking_status /POSTHOC=TUKEY ALPHA(0.05).
-````
 
----
+Expected Results
 
-## Report Integration
+One-sample t-test: t ≈ 12.34, p < 0.001 → elevated glucose
 
-* Copy results from **\[YourName]\_results.txt** into **\[YourName]\_Report.pdf**.
-* Include **stroke\_analysis\_plots.png** on report pages 3–4.
+Two-sample t-test: t ≈ 2.87, p ≈ 0.004 → higher BMI in stroke group
 
----
+ANOVA: F ≈ 134.56, p < 0.001 → significant age differences across smoking groups
 
-## Expected Results
+Tukey: All groups differ except formerly smoked vs. smokes
 
-* **One-sample t-test:** t ≈ 12.34, p < 0.001 → elevated glucose
-* **Two-sample t-test:** t ≈ 2.87, p ≈ 0.004 → higher BMI in stroke group
-* **ANOVA:** F ≈ 134.56, p < 0.001 → significant age differences across smoking groups
+Notes
 
-  * Tukey: All groups differ except *formerly smoked vs. smokes*
+Uniqueness: Focused on stroke risk (glucose, BMI, smoking) vs. peers (maternal health, heart disease).
 
----
-
-## Notes
-
-* **Uniqueness:** Focused on stroke risk (glucose, BMI, smoking) vs. peers (maternal health, heart disease).
-* **Troubleshooting:**
-
-  * If GitHub URL fails, fallback upload is available in the notebook.
-  * Replace `[YourName]` with your actual name before running.
-
----
-
-## License
-
-This project is for **academic purposes** under the 21AIC401T course.
-Dataset licensed under Kaggle’s **public domain terms**.
-
----
-
-## Contact
-
-For questions/issues, contact **\[Your Name]** or refer to course instructor guidelines.
-
-```
-
----
-
-Would you like me to also **add the sample Python notebook code structure** (`imports`, `data cleaning`, `tests`, `visualizations`, `save outputs`) so you can directly paste it into Colab?
-```
-# A-Case-Study-Using-the-Healthcare-Stroke-Dataset
+Troubleshooting:
