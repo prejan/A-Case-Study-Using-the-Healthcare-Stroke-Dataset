@@ -74,35 +74,4 @@ PrejanRajaS_stroke_analysis/
 2. Execute cells in order.  
 3. No dataset upload needed — loads directly from GitHub.  
 
-### Viva Demonstration (Sept 23, 2025)
-- Recommended demo: **Two-sample t-test** (Cell 5 in notebook).  
-- Example explanation:  
-  > *“This uses `scipy.stats.ttest_ind` with `equal_var=False` (Welch’s t-test) due to unequal group sizes. A p-value < 0.05 indicates higher BMI in stroke patients.”*  
-- Show **stroke_analysis_plots.png** during viva.  
 
----
-
-## SPSS Validation
-Use **PrejanRajaS_results.txt** to cross-check results in SPSS. Example syntax:  
-```spss
-GET FILE='PrejanRajaS_CaseStudy.xlsx'.
-
-T-TEST /TESTVAL=100 /VARIABLES=avg_glucose_level /CRITERIA=CI(.95).
-T-TEST GROUPS=stroke(0 1) /VARIABLES=bmi /CRITERIA=CI(.95).
-ONEWAY age BY smoking_status /POSTHOC=TUKEY ALPHA(0.05).
-
-Expected Results
-
-One-sample t-test: t ≈ 12.34, p < 0.001 → elevated glucose
-
-Two-sample t-test: t ≈ 2.87, p ≈ 0.004 → higher BMI in stroke group
-
-ANOVA: F ≈ 134.56, p < 0.001 → significant age differences across smoking groups
-
-Tukey: All groups differ except formerly smoked vs. smokes
-
-Notes
-
-Uniqueness: Focused on stroke risk (glucose, BMI, smoking) vs. peers (maternal health, heart disease).
-
-Troubleshooting:
