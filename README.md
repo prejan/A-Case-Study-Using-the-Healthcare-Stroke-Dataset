@@ -29,11 +29,12 @@ The project is implemented in **Python (Google Colab)**, with outputs compatible
 
 ## Repository Structure
 PrejanRajaS_stroke_analysis/
-├── PrejanRajaS_analysis.ipynb # Google Colab notebook with full implementation
-├── PrejanRajaS_CaseStudy.xlsx # Cleaned dataset + README sheet
-├── PrejanRajaS_results.txt # Statistical results for report/SPSS
-├── stroke_analysis_plots.png # Visualizations (BMI and age boxplots)
-└── README.md # Project documentation
+├── PrejanRajaS_analysis.ipynb   # Google Colab notebook with full implementation
+├── PrejanRajaS_CaseStudy.xlsx   # Cleaned dataset + README sheet
+├── PrejanRajaS_results.txt      # Statistical results for report/SPSS
+├── stroke_analysis_plots.png    # Visualizations (BMI and age boxplots)
+└── README.md                    # Project documentation
+
 
 
 ---
